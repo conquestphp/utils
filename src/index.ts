@@ -1,1 +1,1 @@
-/** Your exports */
+// export * from './strings'

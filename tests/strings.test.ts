@@ -9,7 +9,7 @@ it('does not separate after if string does not match', () => {
     expect(s.after('This is my name', 'Miss')).toBe('This is my name');
 })
 
-it('can separate after last a string', () => {
+it('can separate after last instance of a string', () => {
     expect(s.afterLast('App/Http/Controllers/Controller', '/')).toBe('Controller');
 })
 
@@ -29,10 +29,12 @@ it('does not separate before if string does not match', () => {
     expect(s.before('This is my name', '.')).toBe('This is my name');
 })
 
-it('can separate before last a string', () => {
+it('can separate before last instance of a string', () => {
     expect(s.beforeLast('This is my name', 'is')).toBe('This ');
 })
 
 it('does not separate before last if string does not match', () => {
     expect(s.beforeLast('This is my name', 'isn\'t')).toBe('This is my name');
 })
+
+// between

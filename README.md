@@ -1,24 +1,24 @@
-# :package_title
-[![npm version](https://badge.fury.io/js/:package_name.svg)](https://badge.fury.io/js/:package_name)
+# Utils
+[![npm version](https://badge.fury.io/js/utils.svg)](https://badge.fury.io/js/utils)
 
-:package_description
+A collection of pure Typescript utility functions.
 
 ## Installation
 You can install the package via npm:
 
 ```bash
-npm i :package_name
+npm i utils
 ```
 
 ## Usage
 
 ```javascript
-import * from ':package_name';
+import * from 'utils';
 ```
 
 ## Credits
 
-- [:package_author](https://github.com/conquestphp)
+- [Joshua Wallace](https://github.com/conquestphp)
 - [All Contributors](../../contributors)
 
 ## License

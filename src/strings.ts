@@ -217,3 +217,332 @@ export const wordCount = (source: string): number => source.split(/\s+/).length
 export const words = (source: string, words: number, replacement: string = '...'): string => source.split(/\s+/)
     .slice(0, words)
     .join(' ') + replacement
+
+/**
+ * Class
+ */
+class Stringable extends Object.prototype {
+    constructor(private value: string) {
+        super()
+    }
+
+    after(target: string): Stringable {
+        this.value = after(this.value, target)
+        return this
+    }
+
+    afterLast(target: string): Stringable {
+        this.value = afterLast(this.value, target)
+        return this
+    }
+
+    append(target: string): Stringable {
+        this.value = append(this.value, target)
+        return this
+    }
+
+    before(target: string): Stringable {
+        this.value = before(this.value, target)
+        return this
+    }
+
+    beforeLast(target: string): Stringable {
+        this.value = beforeLast(this.value, target)
+        return this
+    }
+
+    between(start: string, end: string): Stringable {
+        this.value = between(this.value, start, end)
+        return this
+    }
+
+    betweenLast(start: string, end: string): Stringable {
+        this.value = betweenLast(this.value, start, end)
+        return this
+    }
+
+    camel(): Stringable {
+        this.value = camel(this.value)
+        return this
+    }
+
+    charAt(index: number): Stringable {
+        this.value = charAt(this.value, index)
+        return this
+    }
+
+    chopStart(target: string|string[]): Stringable {
+        this.value = chopStart(this.value, target)
+        return this
+    }
+
+    chopEnd(target: string|string[]): Stringable {
+        this.value = chopEnd(this.value, target)
+        return this
+    }
+
+    contains(target: string, caseSensitive: boolean = false): boolean {
+        return contains(this.value, target, caseSensitive)
+    }
+
+    containsAll(targets: string[], caseSensitive: boolean = false): boolean {
+        return containsAll(this.value, targets, caseSensitive)
+    }
+
+    endsWith(target: string|string[]): boolean {
+        return endsWith(this.value, target)
+    }
+
+    exactly(target: string): boolean {
+        return exactly(this.value, target)
+    }
+
+    explode(delimiter: string): string[] {
+        return explode(this.value, delimiter)
+    }
+
+    finish(target: string): Stringable {
+        this.value = finish(this.value, target)
+        return this
+    }
+
+    headline(): Stringable {
+        this.value = headline(this.value)
+        return this
+    }
+
+    is(target: string): boolean {
+        return is(this.value, target)
+    }
+
+    isEmpty(): boolean {
+        return isEmpty(this.value)
+    }
+
+    isNotEmpty(): boolean {
+        return isNotEmpty(this.value)
+    }
+
+    isJson(): boolean {
+        return isJson(this.value)
+    }
+
+    isUrl(): boolean {
+        return isUrl(this.value)
+    }
+
+    isEmail(): boolean {
+        return isEmail(this.value)
+    }
+
+    kebab(): Stringable {
+        this.value = kebab(this.value)
+        return this
+    }
+
+    lcfirst(): Stringable {
+        this.value = lcfirst(this.value)
+        return this
+    }
+
+    length(): number {
+        return length(this.value)
+    }
+
+    limit(limit: number): Stringable {
+        this.value = limit(this.value, limit)
+        return this
+    }
+
+    lower(): Stringable {
+        this.value = lower(this.value)
+        return this
+    }
+
+    mask(mask: string, show: number = 100, end: number = 0): Stringable {
+        this.value = mask(this.value, mask, show, end)
+        return this
+    }
+
+    pad(length: number, pad: string = ' '): Stringable {
+        this.value = pad(this.value, length, pad)
+        return this
+    }
+
+    padLeft(length: number, pad: string = ' '): Stringable {
+        this.value = padLeft(this.value, length, pad)
+        return this
+    }
+
+    padRight(length: number, pad: string = ' '): Stringable {
+        this.value = padRight(this.value, length, pad)
+        return this
+    }
+
+    pipe(...callbacks: Function[]): Stringable {
+        this.value = pipe(this.value, ...callbacks)
+        return this
+    }
+
+    plural(): Stringable {
+        this.value = plural(this.value)
+        return this
+    }
+
+    prepend(target: string): Stringable {
+        this.value = prepend(this.value, target)
+        return this
+    }
+
+    remove(target: string): Stringable {
+        this.value = remove(this.value, target)
+        return this
+    }
+
+    repeat(times: number): Stringable {
+        this.value = repeat(this.value, times)
+        return this
+    }
+
+    replace(target: string, replacement: string): Stringable {
+        this.value = replace(this.value, target, replacement)
+        return this
+    }
+
+    replaceArray(targets: string[], replacement: string): Stringable {
+        this.value = replaceArray(this.value, targets, replacement)
+        return this
+    }
+
+    replaceEnd(target: string, replacement: string): Stringable {
+        this.value = replaceEnd(this.value, target, replacement)
+        return this
+    }
+
+    replaceFirst(target: string, replacement: string): Stringable {
+        this.value = replaceFirst(this.value, target, replacement)
+        return this
+    }
+
+    replaceLast(target: string, replacement: string): Stringable {
+        this.value = replaceLast(this.value, target, replacement)
+        return this
+    }
+
+    replaceStart(target: string, replacement: string): Stringable {
+        this.value = replaceStart(this.value, target, replacement)
+        return this
+    }
+
+    singular(): Stringable {
+        this.value = singular(this.value)
+        return this
+    }
+
+    slug(): Stringable {
+        this.value = slug(this.value)
+        return this
+    }
+
+    snake(): Stringable {
+        this.value = snake(this.value)
+        return this
+    }
+
+    squish(): Stringable {
+        this.value = squish(this.value)
+        return this
+    }
+
+    start(target: string): Stringable {
+        this.value = start(this.value, target)
+        return this
+    }
+
+    startsWith(target: string|string[]): boolean {
+        return startsWith(this.value, target)
+    }
+
+    studly(): Stringable {
+        this.value = studly(this.value)
+        return this
+    }
+
+    substr(start: number, length: number = 0): Stringable {
+        this.value = substr(this.value, start, length)
+        return this
+    }
+
+    take(length: number): Stringable {
+        this.value = take(this.value, length)
+        return this
+    }
+
+    test(pattern: string): boolean {
+        return test(this.value, pattern)
+    }
+
+    title(): Stringable {
+        this.value = title(this.value)
+        return this
+    }
+
+    trim(): Stringable {
+        this.value = trim(this.value)
+        return this
+    }
+
+    ltrim(): Stringable {
+        this.value = ltrim(this.value)
+        return this
+    }
+
+    rtrim(): Stringable {
+        this.value = rtrim(this.value)
+        return this
+    }
+
+    ucfirst(): Stringable {
+        this.value = ucfirst(this.value)
+        return this
+    }
+
+    ucsplit(): string[] {
+        return ucsplit(this.value)
+    }
+
+    unwrap(prefix: string, suffix: string): Stringable {
+        this.value = unwrap(this.value, prefix, suffix)
+        return this
+    }
+
+    upper(): Stringable {
+        this.value = upper(this.value)
+        return this
+    }
+
+    wordCount(): number {
+        return wordCount(this.value)
+    }
+
+    words(words: number, replacement: string = '...'): Stringable {
+        this.value = words(this.value, words, replacement)
+        return this
+    }
+
+    toString(): string {
+        return this.value;
+    }
+
+    value(): string {
+        return this.value;
+    }
+
+    // Implement Symbol.toPrimitive to handle different contexts
+    [Symbol.toPrimitive](hint: string) {
+        if (hint === "string" || hint === "default") {
+            return this.toString();
+        }
+        return this.value();
+    }  
+}

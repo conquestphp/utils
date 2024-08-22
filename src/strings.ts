@@ -148,7 +148,8 @@ export const plural = (v: string) => {
 		[/([^s])$/i, "$1s"],
 	];
 
-	for (const [r, p] of singularToPluralRules) if (r.test(v)) return v.replace(r, p);
+	for (const [r, p] of singularToPluralRules)
+		if (r.test(v)) return v.replace(r, p);
 	return v;
 };
 

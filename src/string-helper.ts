@@ -29,7 +29,7 @@ class Stringable {
 	lcfirst = () => this.chain(s.lcfirst);
 	limit = (limit: number) => this.chain(s.limit, limit);
 	lower = () => this.chain(s.lower);
-	mask = (mask: string = '*', start = 0, length?: number) =>
+	mask = (mask: string = "*", start = 0, length?: number) =>
 		this.chain(s.mask, mask, start, length);
 	pad = (length: number, pad = " ") => this.chain(s.pad, length, pad);
 	padLeft = (length: number, pad = " ") => this.chain(s.padLeft, length, pad);

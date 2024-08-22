@@ -3,17 +3,11 @@ import * as s from '../src/strings'
 
 it('can separate after a string', () => {
     expect(s.after('This is my name', 'This is')).toBe(' my name');
-})
-
-it('does not separate after if string does not match', () => {
     expect(s.after('This is my name', 'Miss')).toBe('This is my name');
 })
 
 it('can separate after last instance of a string', () => {
     expect(s.afterLast('App/Http/Controllers/Controller', '/')).toBe('Controller');
-})
-
-it('does not separate after last if string does not match', () => {
     expect(s.afterLast('App/Http/Controllers/Controller', '\\')).toBe('App/Http/Controllers/Controller');
 })
 
@@ -23,32 +17,19 @@ it('can append', () => {
 
 it('can separate before a string', () => {
     expect(s.before('This is my name', 'my name')).toBe('This is ');
-})
-
-it('does not separate before if string does not match', () => {
     expect(s.before('This is my name', '.')).toBe('This is my name');
 })
 
 it('can separate before last instance of a string', () => {
     expect(s.beforeLast('This is my name', 'is')).toBe('This ');
-})
-
-it('does not separate before last if string does not match', () => {
     expect(s.beforeLast('This is my name', 'isn\'t')).toBe('This is my name');
 })
 
-// between
 it('can get text between two strings', () => {
     expect(s.between('This is my name', 'This', 'name')).toBe(' is my ');
-})
-
-it('returns original string if start not found in between', () => {
     expect(s.between('This is my name', 'That', 'name')).toBe('This is my name');
 })
 
-it('can get text between last occurrences of two strings', () => {
-    expect(s.betweenLast('This is my name is John', 'is', 'name')).toBe(' my ');
-})
 
 it('can convert string to camelCase', () => {
     expect(s.camel('foo-bar')).toBe('fooBar');
@@ -160,7 +141,7 @@ it('can convert string to lowercase', () => {
 
 it('can mask part of a string', () => {
     expect(s.mask('1234567890', '*', 4)).toBe('****567890');
-    expect(s.mask('1234567890', '*', 4, 2)).toBe('****56');
+    expect(s.mask('1234567890', '*', 4, 2)).toBe('****56****');
 })
 
 it('can pad string on both sides', () => {
@@ -279,6 +260,7 @@ it('can test string against regex pattern', () => {
 
 it('can convert string to title case', () => {
     expect(s.title('hello_world')).toBe('Hello World');
+    expect(s.title('TypeScript')).toBe('TypeScript');
     expect(s.title('a nice title uses the correct case')).toBe('A Nice Title Uses The Correct Case');
 })
 

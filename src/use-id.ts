@@ -1,6 +1,3 @@
-let idx = 0;
+let i = 0;
 
-export const useId = (id?: string) => {
-	if (id) return id;
-	return `id-${idx++}`;
-};
+export const useId = (id?: string) => id || `id-${i++}`;

@@ -67,10 +67,6 @@ export const headline = (v: string) =>
 export const is = (v: string, t: string) =>
 	new RegExp(`^${t.replace(/\*/g, ".*")}$`).test(v);
 
-export const isEmpty = (v: string) => v === "";
-
-export const isNotEmpty = (v: string) => v !== "";
-
 export const isJson = (v: string) => {
 	try {
 		JSON.parse(v);
@@ -115,9 +111,6 @@ export const pad = (v: string, l: number, p = " ") =>
 export const padLeft = (v: string, l: number, p = " ") => v.padStart(l, p);
 
 export const padRight = (v: string, l: number, p = " ") => v.padEnd(l, p);
-
-export const pipe = (v: string, ...cs: Function[]) =>
-	cs.reduce((v, c) => c(v), v);
 
 export const plural = (v: string) => {
 	const pluralRules: [RegExp, string][] = [

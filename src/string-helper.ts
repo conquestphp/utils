@@ -1,4 +1,5 @@
 import * as s from "./strings";
+import { pipe } from "./logic";
 
 class Stringable {
 	constructor(private source: string) {}
@@ -34,7 +35,7 @@ class Stringable {
 	pad = (length: number, pad = " ") => this.chain(s.pad, length, pad);
 	padLeft = (length: number, pad = " ") => this.chain(s.padLeft, length, pad);
 	padRight = (length: number, pad = " ") => this.chain(s.padRight, length, pad);
-	pipe = (...callbacks: Function[]) => this.chain(s.pipe, ...callbacks);
+	pipe = (...callbacks: Function[]) => this.chain(pipe, ...callbacks);
 	plural = () => this.chain(s.plural);
 	prepend = (target: string) => this.chain(s.prepend, target);
 	remove = (target: string) => this.chain(s.remove, target);
@@ -78,8 +79,6 @@ class Stringable {
 	endsWith = (target: string | string[]) => s.endsWith(this.source, target);
 	exactly = (target: string) => s.exactly(this.source, target);
 	is = (target: string) => s.is(this.source, target);
-	isEmpty = () => s.isEmpty(this.source);
-	isNotEmpty = () => s.isNotEmpty(this.source);
 	isJson = () => s.isJson(this.source);
 	isUrl = () => s.isUrl(this.source);
 	isEmail = () => s.isEmail(this.source);

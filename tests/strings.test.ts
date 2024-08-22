@@ -90,16 +90,6 @@ it('can match string against pattern with wildcards', () => {
     expect(s.is('foo/bar/baz', 'baz/*')).toBe(false);
 })
 
-it('can check if string is empty', () => {
-    expect(s.isEmpty('')).toBe(true);
-    expect(s.isEmpty('Hello')).toBe(false);
-})
-
-it('can check if string is not empty', () => {
-    expect(s.isNotEmpty('Hello')).toBe(true);
-    expect(s.isNotEmpty('')).toBe(false);
-})
-
 it('can check if string is valid JSON', () => {
     expect(s.isJson('{"name": "John"}')).toBe(true);
     expect(s.isJson('Invalid JSON')).toBe(false);
@@ -158,12 +148,6 @@ it('can pad string on left side', () => {
 it('can pad string on right side', () => {
     expect(s.padRight('Hello', 7)).toBe('Hello  ');
     expect(s.padRight('Hi', 4, '0')).toBe('Hi00');
-})
-
-it('can pipe string through multiple functions', () => {
-    const upper = (s: string) => s.toUpperCase();
-    const reverse = (s: string) => s.split('').reverse().join('');
-    expect(s.pipe('hello', upper, reverse)).toBe('OLLEH');
 })
 
 it('can convert string to plural form', () => {

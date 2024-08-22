@@ -17,5 +17,6 @@ it('can use dot notation to access nested objects', () => {
     ]
     expect(o.get('1.a.b.c', arr)).toEqual(2);
 
-    expect(o.get('a.b.c', arr)).toEqual(null);
+    expect(o.get('a.b.c', arr)).toEqual(undefined);
+    expect(o.get('3.b.c', arr)).toEqual(undefined);
 })

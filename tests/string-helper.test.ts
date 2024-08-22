@@ -48,8 +48,6 @@ it("should handle string checks", () => {
   expect(str("Hello World").endsWith("World")).toBe(true);
   expect(str("Hello").exactly("Hello")).toBe(true);
   expect(str("foo/bar/baz").is("foo/*")).toBe(true);
-  expect(str("").isEmpty()).toBe(true);
-  expect(str("Hello").isNotEmpty()).toBe(true);
   expect(str('{"name": "John"}').isJson()).toBe(true);
   expect(str("https://example.com").isUrl()).toBe(true);
   expect(str("user@example.com").isEmail()).toBe(true);

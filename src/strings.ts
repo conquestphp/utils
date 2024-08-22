@@ -120,7 +120,22 @@ export const pipe = (v: string, ...cs: Function[]) =>
 	cs.reduce((v, c) => c(v), v);
 
 export const plural = (v: string) => {
-	const rs: [RegExp, string][] = [
+	const pluralRules: [RegExp, string][] = [
+		[/(?:s|x|z|ch|sh)es$/i, "$&"],
+		[/([^aeiou])ies$/i, "$&"],
+		[/([aeiou]y)s$/i, "$&"],
+		[/(?:([^f])fe|([lr])f)ves$/i, "$&"],
+		[/ses$/i, "$&"],
+		[/(us)es$/i, "$&"],
+		[/(on)a$/i, "$&"],
+		[/(um)a$/i, "$&"],
+		[/(is)es$/i, "$&"],
+		[/([^s])s$/i, "$&"],
+	];
+
+	for (const [r] of pluralRules) if (r.test(v)) return v;
+
+	const singularToPluralRules: [RegExp, string][] = [
 		[/(?:s|x|z|ch|sh)$/i, "$&es"],
 		[/([^aeiou])y$/i, "$1ies"],
 		[/([aeiou]y)$/i, "$1s"],
@@ -132,7 +147,8 @@ export const plural = (v: string) => {
 		[/(is)$/i, "es"],
 		[/([^s])$/i, "$1s"],
 	];
-	for (const [r, p] of rs) if (r.test(v)) return v.replace(r, p);
+
+	for (const [r, p] of singularToPluralRules) if (r.test(v)) return v.replace(r, p);
 	return v;
 };
 

@@ -19,8 +19,6 @@ class Stringable {
 	before = (target: string) => this.chain(s.before, target);
 	beforeLast = (target: string) => this.chain(s.beforeLast, target);
 	between = (start: string, end: string) => this.chain(s.between, start, end);
-	betweenFirst = (start: string, end: string) =>
-		this.chain(s.betweenFirst, start, end);
 	camel = () => this.chain(s.camel);
 	charAt = (index: number) => this.chain(s.charAt, index);
 	chopStart = (target: string | string[]) => this.chain(s.chopStart, target);
@@ -31,8 +29,8 @@ class Stringable {
 	lcfirst = () => this.chain(s.lcfirst);
 	limit = (limit: number) => this.chain(s.limit, limit);
 	lower = () => this.chain(s.lower);
-	mask = (mask: string, show = 100, end = 0) =>
-		this.chain(s.mask, mask, show, end);
+	mask = (mask: string = '*', start = 0, length?: number) =>
+		this.chain(s.mask, mask, start, length);
 	pad = (length: number, pad = " ") => this.chain(s.pad, length, pad);
 	padLeft = (length: number, pad = " ") => this.chain(s.padLeft, length, pad);
 	padRight = (length: number, pad = " ") => this.chain(s.padRight, length, pad);

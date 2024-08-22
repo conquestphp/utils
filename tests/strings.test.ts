@@ -43,6 +43,7 @@ it('can get character at index', () => {
 it('can chop string from start', () => {
     expect(s.chopStart('https://laravel.com', 'https://')).toBe('laravel.com');
     expect(s.chopStart('https://laravel.com', ['https://', 'http://'])).toBe('laravel.com');
+    expect(s.chopStart('https://laravel.com', ['.com'])).toBe('https://laravel.com');
 })
 
 it('can chop string from end', () => {
@@ -169,6 +170,7 @@ it('can convert string to plural form', () => {
     expect(s.plural('car')).toBe('cars');
     expect(s.plural('baby')).toBe('babies');
     expect(s.plural('analyse')).toBe('analyses');
+    expect(s.plural('babies')).toBe('babies');
 })
 
 it('can prepend string', () => {

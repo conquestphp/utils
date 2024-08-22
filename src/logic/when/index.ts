@@ -1,0 +1,1 @@
+// export const when = (v: boolean, fn: () => T, dfn?: () => T): T => v ? fn() : dfn ? dfn() : v;

@@ -1,0 +1,1 @@
+export const after = (v: string, t: string) => v.slice(v.indexOf(t) + t.length || 0);

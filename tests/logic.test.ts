@@ -35,4 +35,6 @@ it('can pipe through multiple functions', () => {
     const upper = (s: string) => s.toUpperCase();
     const reverse = (s: string) => s.split('').reverse().join('');
     expect(l.pipe('hello', upper, reverse)).toBe('OLLEH');
+    const double = (n: number) => n * 2;
+    expect(l.pipe(2, double, double)).toBe(8);
 })

@@ -14,4 +14,5 @@ export const isNumber = (v: unknown): v is number =>
 export const isNull = (v: unknown): v is null | undefined =>
 	v === null || v === undefined;
 
-export const pipe = <T>(v: T, ...cs: Function[]) => cs.reduce((v: T, c) => c(v), v);
+export const pipe = <T>(v: T, ...cs: Function[]) =>
+	cs.reduce((v: T, c) => c(v), v);

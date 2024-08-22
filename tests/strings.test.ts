@@ -60,8 +60,8 @@ it('can get character at index', () => {
 })
 
 it('can chop string from start', () => {
-    expect(s.chopStart('Hello World', 'Hello ')).toBe('World');
-    expect(s.chopStart('Hello World', ['Hello ', 'Hi '])).toBe('World');
+    expect(s.chopStart('https://laravel.com', 'https://')).toBe('laravel.com');
+    expect(s.chopStart('https://laravel.com', ['https://', 'http://'])).toBe('laravel.com');
 })
 
 it('can chop string from end', () => {
@@ -99,8 +99,8 @@ it('can finish string with a given substring', () => {
 })
 
 it('can convert string to headline case', () => {
-    expect(s.headline('hello_world')).toBe('Hello World');
-    expect(s.headline('helloWorld')).toBe('Hello World');
+    expect(s.headline('steve_jobs')).toBe('Steve Jobs');
+    expect(s.headline('EmailNotificationSent')).toBe('Email Notification Sent');
 })
 
 it('can match string against pattern with wildcards', () => {
@@ -187,7 +187,7 @@ it('can pipe string through multiple functions', () => {
 it('can convert string to plural form', () => {
     expect(s.plural('car')).toBe('cars');
     expect(s.plural('baby')).toBe('babies');
-    expect(s.plural('analysis')).toBe('analyses');
+    expect(s.plural('analyse')).toBe('analyses');
 })
 
 it('can prepend string', () => {
@@ -231,7 +231,7 @@ it('can replace substring at the start', () => {
 it('can convert string to singular form', () => {
     expect(s.singular('cars')).toBe('car');
     expect(s.singular('babies')).toBe('baby');
-    expect(s.singular('analyses')).toBe('analysis');
+    expect(s.singular('analyses')).toBe('analyse');
 })
 
 it('can convert string to slug', () => {
@@ -279,47 +279,47 @@ it('can test string against regex pattern', () => {
 
 it('can convert string to title case', () => {
     expect(s.title('hello_world')).toBe('Hello World');
-    expect(s.title('helloWorld')).toBe('Hello World');
+    expect(s.title('a nice title uses the correct case')).toBe('A Nice Title Uses The Correct Case');
 })
 
 it('can trim whitespace', () => {
-    expect(s.trim('  Hello World  ')).toBe('Hello World');
+    expect(s.trim('  Conquest  ')).toBe('Conquest');
 })
 
 it('can trim whitespace from left', () => {
-    expect(s.ltrim('  Hello World  ')).toBe('Hello World  ');
+    expect(s.ltrim('  Conquest  ')).toBe('Conquest  ');
 })
 
 it('can trim whitespace from right', () => {
-    expect(s.rtrim('  Hello World  ')).toBe('  Hello World');
+    expect(s.rtrim('  Conquest  ')).toBe('  Conquest');
 })
 
 it('can convert first character to uppercase', () => {
-    expect(s.ucfirst('hello')).toBe('Hello');
-    expect(s.ucfirst('WORLD')).toBe('WORLD');
+    expect(s.ucfirst('foo bar')).toBe('Foo bar');
+    expect(s.ucfirst('FOO BAR')).toBe('FOO BAR');
 })
 
 it('can split string on uppercase characters', () => {
-    expect(s.ucsplit('helloWorld')).toEqual(['hello', 'World']);
-    expect(s.ucsplit('HelloWorld')).toEqual(['Hello', 'World']);
+    expect(s.ucsplit('fooBar')).toEqual(['foo', 'Bar']);
+    expect(s.ucsplit('FooBar')).toEqual(['Foo', 'Bar']);
 })
 
 it('can unwrap string', () => {
-    expect(s.unwrap('{Hello World}', '{', '}')).toBe('Hello World');
-    expect(s.unwrap('Hello World', '{', '}')).toBe('Hello World');
+    expect(s.unwrap('{Conquest}', '{', '}')).toBe('Conquest');
+    expect(s.unwrap('Conquest', '{', '}')).toBe('Conquest');
 })
 
 it('can convert string to uppercase', () => {
-    expect(s.upper('hello')).toBe('HELLO');
-    expect(s.upper('Hello World')).toBe('HELLO WORLD');
+    expect(s.upper('conquest')).toBe('CONQUEST');
+    expect(s.upper('Conquest')).toBe('CONQUEST');
 })
 
 it('can count words in string', () => {
-    expect(s.wordCount('Hello World')).toBe(2);
+    expect(s.wordCount('Hello, World')).toBe(2);
     expect(s.wordCount('This is a test')).toBe(4);
 })
 
 it('can limit words in string', () => {
-    expect(s.words('Hello World This Is A Test', 3)).toBe('Hello World This...');
-    expect(s.words('Hello World', 3)).toBe('Hello World');
+    expect(s.words('Perfectly balanced, as all things should be.', 3, '>>>')).toBe('Perfectly balanced, as>>>');
+    expect(s.words('Conquest', 3)).toBe('Conquest');
 })

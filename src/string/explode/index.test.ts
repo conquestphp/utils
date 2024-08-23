@@ -1,6 +1,6 @@
 import { it, expect } from "vitest";
-import { explode } from '.'
+import { explode } from ".";
 
-it('can explode string into array', () => {
-    expect(explode('Hello World', ' ')).toEqual(['Hello', 'World']);
-})
+it("can explode string into array", () => {
+	expect(explode("Hello World", " ")).toEqual(["Hello", "World"]);
+});

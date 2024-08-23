@@ -1,7 +1,7 @@
 import { it, expect } from "vitest";
-import { slug } from '.'
+import { slug } from ".";
 
-it('can convert string to slug', () => {
-    expect(slug('Hello World')).toBe('hello-world');
-    expect(slug('Hello, World!')).toBe('hello-world');
-})
+it("can convert string to slug", () => {
+	expect(slug("Hello World")).toBe("hello-world");
+	expect(slug("Hello, World!")).toBe("hello-world");
+});

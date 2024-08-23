@@ -1,6 +1,6 @@
 import { it, expect } from "vitest";
-import { trim } from '.'
+import { trim } from ".";
 
-it('can trim whitespace', () => {
-    expect(trim('  Conquest  ')).toBe('Conquest');
-})
+it("can trim whitespace", () => {
+	expect(trim("  Conquest  ")).toBe("Conquest");
+});

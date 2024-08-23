@@ -6,7 +6,8 @@ export const get = (needle: string, haystack: any): any => {
 		if (
 			current == null ||
 			(typeof key === "number" && (key < 0 || key >= current.length)) ||
-			(typeof key === "string" && (typeof current !== "object" || !(key in current)))
+			(typeof key === "string" &&
+				(typeof current !== "object" || !(key in current)))
 		) {
 			return undefined;
 		}

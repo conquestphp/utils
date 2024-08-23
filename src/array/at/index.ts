@@ -1,7 +1,2 @@
-export const at = <T>(arr: T[], i: number): T | undefined => {
-    try {
-        return arr[i];
-    } catch (e) {
-        return undefined;
-    }
-};
+export const at = <T>(arr: T[], i: number): T | undefined =>
+	i >= 0 ? arr[i] : arr[arr.length + i];

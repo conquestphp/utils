@@ -1,6 +1,6 @@
 import { it, expect } from "vitest";
-import { rtrim } from '.'
+import { rtrim } from ".";
 
-it('can trim whitespace from right', () => {
-    expect(rtrim('  Conquest  ')).toBe('  Conquest');
-})
+it("can trim whitespace from right", () => {
+	expect(rtrim("  Conquest  ")).toBe("  Conquest");
+});

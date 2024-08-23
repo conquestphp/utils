@@ -1,6 +1,8 @@
 import { it, expect } from "vitest";
-import { replaceFirst } from '.'
+import { replaceFirst } from ".";
 
-it('can replace first occurrence of substring', () => {
-    expect(replaceFirst('Hello Hello World', 'Hello', 'Hi')).toBe('Hi Hello World');
-})
+it("can replace first occurrence of substring", () => {
+	expect(replaceFirst("Hello Hello World", "Hello", "Hi")).toBe(
+		"Hi Hello World",
+	);
+});

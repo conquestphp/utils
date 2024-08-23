@@ -1,0 +1,1 @@
+// Wrapper for objects or strings to collect values

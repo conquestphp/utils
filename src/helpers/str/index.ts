@@ -58,8 +58,8 @@ class Stringable {
 	start = (target: string) => this.chain(s.start, target);
 	studly = () => this.chain(s.studly);
 	substr = (start: number, length = 0) => this.chain(s.substr, start, length);
-    suffix = (target: string) => this.chain(s.suffix, target);
-    take = (length: number) => this.chain(s.take, length);
+	suffix = (target: string) => this.chain(s.suffix, target);
+	take = (length: number) => this.chain(s.take, length);
 	title = () => this.chain(s.title);
 	trim = () => this.chain(s.trim);
 	ltrim = () => this.chain(s.ltrim);

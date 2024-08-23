@@ -1,2 +1,2 @@
-export const remove = (v: string, t: string) => v.replace(t, "");
+export const repeat = (v: string, t: number) => v.repeat(t);
  

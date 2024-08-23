@@ -1,1 +1,4 @@
-export const after = (v: string, t: string) => v.slice(v.indexOf(t) + t.length || 0);
+export const after = (v: string, t: string) => {
+    const i = v.indexOf(t);
+    return i < 0 ? v : v.slice(i + t.length);
+};

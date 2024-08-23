@@ -1,4 +1,3 @@
-
 import { it, expect } from 'vitest'
 import { isBlank } from '.'
 

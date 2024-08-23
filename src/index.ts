@@ -1,8 +1,11 @@
 // export * from "./strings";
 // export * from "./string-helper";
-// export * from "./numbers";
 // export * from "./use-id";
 // export * from "./logic";
-// export * from "./objects";
 // export * from "./math";
-export * from "./str";
+// export * from "./number";
+export * from "./string";
+export * from "./use-id";
+export * from "./helpers";
+export * from "./logic"
+export * from "./object";

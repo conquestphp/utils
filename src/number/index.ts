@@ -3,6 +3,7 @@ export { clamp } from './clamp';
 export { fileSize } from './file-size';
 export { format } from './format';
 export { max } from './max';
+export { maxBy } from './max-by';
 export { mean } from './mean';
 export { median } from './median';
 export { min } from './min';

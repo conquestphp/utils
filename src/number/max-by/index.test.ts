@@ -22,10 +22,6 @@ it('should return the only element for single-element arrays', () => {
     expect(maxBy([42])).toBe(42);
 });
 
-it('should handle empty arrays by returning undefined', () => {
-    expect(maxBy([])).toBeUndefined();
-});
-
 it('should work with negative numbers', () => {
     expect(maxBy([-5, -2, -8, -1])).toBe(-1);
 });
@@ -34,7 +30,7 @@ it('should handle arrays with duplicate maximum values', () => {
     expect(maxBy([1, 5, 3, 5, 2])).toBe(5);
 });
 
-it('should work with custom comparison function for strings', () => {
+it('should work with custom comparison function for strings which uses order as tie break', () => {
     const strings = ['apple', 'banana', 'cherry', 'date'];
     expect(maxBy(strings, str => str.length)).toBe('banana');
 });

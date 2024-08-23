@@ -1,6 +1,2 @@
 export const minBy = <T>(args: T[], by?: (arg: T) => number | string): T =>
-	args.sort((a, b) => {
-		const aValue = by ? by(a) : a;
-		const bValue = by ? by(b) : b;
-		return aValue < bValue ? -1 : aValue > bValue ? 1 : 0;
-	})[0];
+    args.reduce((m, c) => by ? by(c) < by(m) ? c : m : c < m ? c : m);

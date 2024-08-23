@@ -7,6 +7,7 @@ export { maxBy } from './max-by';
 export { mean } from './mean';
 export { median } from './median';
 export { min } from './min';
+export { minBy } from './min-by';
 // export { mode } from './mode';
 // export { nth } from './nth';
 export { ordinal } from './ordinal';

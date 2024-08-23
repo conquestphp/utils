@@ -1,0 +1,623 @@
+{
+  "meta": {
+    "name": "@conquest/utils",
+    "dependencies": [
+      "@biomejs/biome",
+      "@types/node",
+      "@vitest/coverage-v8",
+      "axios",
+      "typescript",
+      "vite",
+      "vite-bundle-visualizer",
+      "vitest"
+    ],
+    "versions": {
+      "export-size": "0.7.0",
+      "esbuild": "^0.19.5"
+    }
+  },
+  "exports": [
+    {
+      "name": "str",
+      "path": "dist/utils.js",
+      "minified": 6340,
+      "minzipped": 1790,
+      "bundled": 8554
+    },
+    {
+      "name": "plural",
+      "path": "dist/utils.js",
+      "minified": 583,
+      "minzipped": 232,
+      "bundled": 793
+    },
+    {
+      "name": "isset",
+      "path": "dist/utils.js",
+      "minified": 352,
+      "minzipped": 217,
+      "bundled": 512
+    },
+    {
+      "name": "get",
+      "path": "dist/utils.js",
+      "minified": 327,
+      "minzipped": 205,
+      "bundled": 472
+    },
+    {
+      "name": "chopEnd",
+      "path": "dist/utils.js",
+      "minified": 151,
+      "minzipped": 142,
+      "bundled": 205
+    },
+    {
+      "name": "fileSize",
+      "path": "dist/utils.js",
+      "minified": 184,
+      "minzipped": 131,
+      "bundled": 255
+    },
+    {
+      "name": "dot",
+      "path": "dist/utils.js",
+      "minified": 160,
+      "minzipped": 118,
+      "bundled": 230
+    },
+    {
+      "name": "headline",
+      "path": "dist/utils.js",
+      "minified": 133,
+      "minzipped": 112,
+      "bundled": 169
+    },
+    {
+      "name": "singular",
+      "path": "dist/utils.js",
+      "minified": 165,
+      "minzipped": 112,
+      "bundled": 221
+    },
+    {
+      "name": "words",
+      "path": "dist/utils.js",
+      "minified": 108,
+      "minzipped": 111,
+      "bundled": 160
+    },
+    {
+      "name": "chopStart",
+      "path": "dist/utils.js",
+      "minified": 132,
+      "minzipped": 105,
+      "bundled": 191
+    },
+    {
+      "name": "containsAll",
+      "path": "dist/utils.js",
+      "minified": 127,
+      "minzipped": 103,
+      "bundled": 187
+    },
+    {
+      "name": "between",
+      "path": "dist/utils.js",
+      "minified": 126,
+      "minzipped": 102,
+      "bundled": 184
+    },
+    {
+      "name": "isBlank",
+      "path": "dist/utils.js",
+      "minified": 120,
+      "minzipped": 102,
+      "bundled": 171
+    },
+    {
+      "name": "kebab",
+      "path": "dist/utils.js",
+      "minified": 99,
+      "minzipped": 100,
+      "bundled": 130
+    },
+    {
+      "name": "mask",
+      "path": "dist/utils.js",
+      "minified": 126,
+      "minzipped": 100,
+      "bundled": 185
+    },
+    {
+      "name": "title",
+      "path": "dist/utils.js",
+      "minified": 114,
+      "minzipped": 99,
+      "bundled": 152
+    },
+    {
+      "name": "isNumber",
+      "path": "dist/utils.js",
+      "minified": 109,
+      "minzipped": 96,
+      "bundled": 158
+    },
+    {
+      "name": "camel",
+      "path": "dist/utils.js",
+      "minified": 90,
+      "minzipped": 94,
+      "bundled": 124
+    },
+    {
+      "name": "median",
+      "path": "dist/utils.js",
+      "minified": 105,
+      "minzipped": 93,
+      "bundled": 168
+    },
+    {
+      "name": "replaceLast",
+      "path": "dist/utils.js",
+      "minified": 109,
+      "minzipped": 93,
+      "bundled": 161
+    },
+    {
+      "name": "snake",
+      "path": "dist/utils.js",
+      "minified": 118,
+      "minzipped": 93,
+      "bundled": 150
+    },
+    {
+      "name": "studly",
+      "path": "dist/utils.js",
+      "minified": 129,
+      "minzipped": 93,
+      "bundled": 169
+    },
+    {
+      "name": "format",
+      "path": "dist/utils.js",
+      "minified": 87,
+      "minzipped": 91,
+      "bundled": 128
+    },
+    {
+      "name": "chunk",
+      "path": "dist/utils.js",
+      "minified": 100,
+      "minzipped": 90,
+      "bundled": 152
+    },
+    {
+      "name": "ordinal",
+      "path": "dist/utils.js",
+      "minified": 101,
+      "minzipped": 90,
+      "bundled": 160
+    },
+    {
+      "name": "abbreviate",
+      "path": "dist/utils.js",
+      "minified": 96,
+      "minzipped": 89,
+      "bundled": 137
+    },
+    {
+      "name": "beforeLast",
+      "path": "dist/utils.js",
+      "minified": 85,
+      "minzipped": 89,
+      "bundled": 130
+    },
+    {
+      "name": "pad",
+      "path": "dist/utils.js",
+      "minified": 85,
+      "minzipped": 89,
+      "bundled": 124
+    },
+    {
+      "name": "endsWith",
+      "path": "dist/utils.js",
+      "minified": 85,
+      "minzipped": 87,
+      "bundled": 121
+    },
+    {
+      "name": "unwrap",
+      "path": "dist/utils.js",
+      "minified": 92,
+      "minzipped": 86,
+      "bundled": 130
+    },
+    {
+      "name": "before",
+      "path": "dist/utils.js",
+      "minified": 81,
+      "minzipped": 85,
+      "bundled": 126
+    },
+    {
+      "name": "startsWith",
+      "path": "dist/utils.js",
+      "minified": 89,
+      "minzipped": 85,
+      "bundled": 125
+    },
+    {
+      "name": "contains",
+      "path": "dist/utils.js",
+      "minified": 92,
+      "minzipped": 84,
+      "bundled": 130
+    },
+    {
+      "name": "omit",
+      "path": "dist/utils.js",
+      "minified": 100,
+      "minzipped": 83,
+      "bundled": 132
+    },
+    {
+      "name": "pick",
+      "path": "dist/utils.js",
+      "minified": 99,
+      "minzipped": 82,
+      "bundled": 131
+    },
+    {
+      "name": "after",
+      "path": "dist/utils.js",
+      "minified": 85,
+      "minzipped": 81,
+      "bundled": 131
+    },
+    {
+      "name": "ucsplit",
+      "path": "dist/utils.js",
+      "minified": 77,
+      "minzipped": 81,
+      "bundled": 109
+    },
+    {
+      "name": "slug",
+      "path": "dist/utils.js",
+      "minified": 90,
+      "minzipped": 77,
+      "bundled": 121
+    },
+    {
+      "name": "substr",
+      "path": "dist/utils.js",
+      "minified": 73,
+      "minzipped": 77,
+      "bundled": 115
+    },
+    {
+      "name": "isJson",
+      "path": "dist/utils.js",
+      "minified": 71,
+      "minzipped": 75,
+      "bundled": 132
+    },
+    {
+      "name": "maxBy",
+      "path": "dist/utils.js",
+      "minified": 70,
+      "minzipped": 74,
+      "bundled": 119
+    },
+    {
+      "name": "minBy",
+      "path": "dist/utils.js",
+      "minified": 70,
+      "minzipped": 74,
+      "bundled": 119
+    },
+    {
+      "name": "replaceEnd",
+      "path": "dist/utils.js",
+      "minified": 70,
+      "minzipped": 74,
+      "bundled": 106
+    },
+    {
+      "name": "isUrl",
+      "path": "dist/utils.js",
+      "minified": 68,
+      "minzipped": 72,
+      "bundled": 124
+    },
+    {
+      "name": "when",
+      "path": "dist/utils.js",
+      "minified": 77,
+      "minzipped": 72,
+      "bundled": 123
+    },
+    {
+      "name": "replaceStart",
+      "path": "dist/utils.js",
+      "minified": 69,
+      "minzipped": 71,
+      "bundled": 104
+    },
+    {
+      "name": "afterLast",
+      "path": "dist/utils.js",
+      "minified": 64,
+      "minzipped": 68,
+      "bundled": 94
+    },
+    {
+      "name": "isEmail",
+      "path": "dist/utils.js",
+      "minified": 62,
+      "minzipped": 66,
+      "bundled": 91
+    },
+    {
+      "name": "lcfirst",
+      "path": "dist/utils.js",
+      "minified": 62,
+      "minzipped": 66,
+      "bundled": 93
+    },
+    {
+      "name": "ucfirst",
+      "path": "dist/utils.js",
+      "minified": 62,
+      "minzipped": 66,
+      "bundled": 95
+    },
+    {
+      "name": "at",
+      "path": "dist/utils.js",
+      "minified": 61,
+      "minzipped": 65,
+      "bundled": 116
+    },
+    {
+      "name": "replaceArray",
+      "path": "dist/utils.js",
+      "minified": 65,
+      "minzipped": 65,
+      "bundled": 99
+    },
+    {
+      "name": "clamp",
+      "path": "dist/utils.js",
+      "minified": 57,
+      "minzipped": 61,
+      "bundled": 90
+    },
+    {
+      "name": "mean",
+      "path": "dist/utils.js",
+      "minified": 57,
+      "minzipped": 61,
+      "bundled": 96
+    },
+    {
+      "name": "max",
+      "path": "dist/utils.js",
+      "minified": 55,
+      "minzipped": 59,
+      "bundled": 93
+    },
+    {
+      "name": "squish",
+      "path": "dist/utils.js",
+      "minified": 54,
+      "minzipped": 58,
+      "bundled": 84
+    },
+    {
+      "name": "sum",
+      "path": "dist/utils.js",
+      "minified": 53,
+      "minzipped": 57,
+      "bundled": 88
+    },
+    {
+      "name": "min",
+      "path": "dist/utils.js",
+      "minified": 55,
+      "minzipped": 56,
+      "bundled": 93
+    },
+    {
+      "name": "padLeft",
+      "path": "dist/utils.js",
+      "minified": 51,
+      "minzipped": 55,
+      "bundled": 83
+    },
+    {
+      "name": "pipe",
+      "path": "dist/utils.js",
+      "minified": 51,
+      "minzipped": 55,
+      "bundled": 90
+    },
+    {
+      "name": "test",
+      "path": "dist/utils.js",
+      "minified": 51,
+      "minzipped": 55,
+      "bundled": 81
+    },
+    {
+      "name": "start",
+      "path": "dist/utils.js",
+      "minified": 51,
+      "minzipped": 54,
+      "bundled": 85
+    },
+    {
+      "name": "finish",
+      "path": "dist/utils.js",
+      "minified": 49,
+      "minzipped": 53,
+      "bundled": 83
+    },
+    {
+      "name": "padRight",
+      "path": "dist/utils.js",
+      "minified": 49,
+      "minzipped": 53,
+      "bundled": 81
+    },
+    {
+      "name": "wordCount",
+      "path": "dist/utils.js",
+      "minified": 47,
+      "minzipped": 51,
+      "bundled": 78
+    },
+    {
+      "name": "replace",
+      "path": "dist/utils.js",
+      "minified": 46,
+      "minzipped": 50,
+      "bundled": 76
+    },
+    {
+      "name": "replaceFirst",
+      "path": "dist/utils.js",
+      "minified": 46,
+      "minzipped": 50,
+      "bundled": 76
+    },
+    {
+      "name": "remove",
+      "path": "dist/utils.js",
+      "minified": 45,
+      "minzipped": 49,
+      "bundled": 74
+    },
+    {
+      "name": "isString",
+      "path": "dist/utils.js",
+      "minified": 44,
+      "minzipped": 48,
+      "bundled": 77
+    },
+    {
+      "name": "useId",
+      "path": "dist/utils.js",
+      "minified": 44,
+      "minzipped": 48,
+      "bundled": 86
+    },
+    {
+      "name": "limit",
+      "path": "dist/utils.js",
+      "minified": 42,
+      "minzipped": 46,
+      "bundled": 71
+    },
+    {
+      "name": "take",
+      "path": "dist/utils.js",
+      "minified": 42,
+      "minzipped": 46,
+      "bundled": 73
+    },
+    {
+      "name": "charAt",
+      "path": "dist/utils.js",
+      "minified": 41,
+      "minzipped": 45,
+      "bundled": 69
+    },
+    {
+      "name": "lower",
+      "path": "dist/utils.js",
+      "minified": 41,
+      "minzipped": 45,
+      "bundled": 70
+    },
+    {
+      "name": "repeat",
+      "path": "dist/utils.js",
+      "minified": 41,
+      "minzipped": 45,
+      "bundled": 69
+    },
+    {
+      "name": "upper",
+      "path": "dist/utils.js",
+      "minified": 41,
+      "minzipped": 45,
+      "bundled": 72
+    },
+    {
+      "name": "explode",
+      "path": "dist/utils.js",
+      "minified": 40,
+      "minzipped": 44,
+      "bundled": 68
+    },
+    {
+      "name": "ltrim",
+      "path": "dist/utils.js",
+      "minified": 39,
+      "minzipped": 43,
+      "bundled": 68
+    },
+    {
+      "name": "rtrim",
+      "path": "dist/utils.js",
+      "minified": 37,
+      "minzipped": 41,
+      "bundled": 66
+    },
+    {
+      "name": "exactly",
+      "path": "dist/utils.js",
+      "minified": 35,
+      "minzipped": 39,
+      "bundled": 65
+    },
+    {
+      "name": "length",
+      "path": "dist/utils.js",
+      "minified": 34,
+      "minzipped": 38,
+      "bundled": 63
+    },
+    {
+      "name": "trim",
+      "path": "dist/utils.js",
+      "minified": 34,
+      "minzipped": 38,
+      "bundled": 65
+    },
+    {
+      "name": "isNull",
+      "path": "dist/utils.js",
+      "minified": 33,
+      "minzipped": 37,
+      "bundled": 66
+    },
+    {
+      "name": "prefix",
+      "path": "dist/utils.js",
+      "minified": 33,
+      "minzipped": 37,
+      "bundled": 63
+    },
+    {
+      "name": "suffix",
+      "path": "dist/utils.js",
+      "minified": 33,
+      "minzipped": 37,
+      "bundled": 65
+    }
+  ]
+}

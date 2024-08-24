@@ -1,0 +1,1 @@
+export const flatten = (arr: unknown[], depth: number = 1): unknown[] => arr.flat(depth)

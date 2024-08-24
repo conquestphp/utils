@@ -6,7 +6,7 @@ it('should return the previous element of the array', () => {
 })
 
 it('should return undefined if the index is out of bounds', () => {
-	expect(prev([1, 2, 3, 4, 5], 5)).toBeUndefined()
+	expect(prev([1, 2, 3, 4, 5], 6)).toBeUndefined()
 })
 
 it('should return undefined if the array is empty', () => {

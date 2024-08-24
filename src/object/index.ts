@@ -1,5 +1,16 @@
 export { dot } from "./dot";
+// export { except } from "./except";
+export { flip } from "./flip";
+export { forget } from "./forget";
 export { get } from "./get";
 export { isset } from "./isset";
+// export { keys } from "./keys";
+// export { mapWithKeys } from "./mapWithKeys";
+// export { merge } from "./merge";
 export { omit } from "./omit";
 export { pick } from "./pick";
+// export { pull } from "./pull";
+// export { put } from "./put";
+export { select } from "./select";
+// export { undot } from "./undot";
+export { where } from "./where";

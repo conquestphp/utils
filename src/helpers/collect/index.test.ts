@@ -1,2 +1,6 @@
 import { expect, it } from "vitest"
-import { collect } from "./index"
+import { collect, Collection } from "./index"
+
+it('collects using a Collection class', () => {
+    expect(collect()).toBeInstanceOf(Collection)
+})

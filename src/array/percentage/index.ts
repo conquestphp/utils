@@ -1,0 +1,1 @@
+export const percentage = <T>(arr: T[], fn: (item: T) => boolean) => (arr.filter(fn).length / arr.length) * 100

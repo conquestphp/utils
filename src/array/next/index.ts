@@ -1,0 +1,1 @@
+export const next = (arr: number[], i: number) => arr.at(i + 1)

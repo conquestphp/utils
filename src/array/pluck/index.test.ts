@@ -14,5 +14,5 @@ it('should return an empty array if the key does not exist', () => {
 })
 
 it('should return an array of values from the given keys', () => {
-	expect(pluck([{ a: 1, b: 2, c: 3 }, { a: 2, b: 3, c: 4 }, { a: 3, b: 4, c: 5 }], 'a', 'b')).toEqual([[1, 2], [2, 3], [3, 4]])
+	expect(pluck([{ a: 1, b: 2, c: 3 }, { a: 2, b: 3, c: 4 }, { a: 3, b: 4, c: 5 }], 'a', 'b')).toEqual([{a: 1, b: 2}, {a: 2, b: 3}, {a: 3, b: 4}])
 })

@@ -4,7 +4,6 @@ import * as s from "../../string";
 class Stringable {
 	constructor(private source: string) {}
 
-	// Helper method to reduce repetition
 	private chain(
 		fn: (s: string, ...args: any[]) => string,
 		...args: any[]

@@ -1,1 +1,1 @@
-export const reverse = <T>(arr: T[]) => arr.reverse()
+export const reverse = <T>(arr: T[]) => arr.reverse();

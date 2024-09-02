@@ -1,1 +1,1 @@
-export const collapse = <T>(a: T[]): T[] => a.flat(Infinity) as T[]
+export const collapse = <T>(arr: T[]): T[] => arr.flat(Infinity) as T[];

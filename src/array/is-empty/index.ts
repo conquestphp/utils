@@ -1,1 +1,1 @@
-export const isEmpty = <T>(arr: T[]) => arr.length === 0
+export const isEmpty = <T>(arr: T[]) => arr.length === 0;

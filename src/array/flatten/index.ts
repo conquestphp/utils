@@ -1,1 +1,2 @@
-export const flatten = (arr: unknown[], depth: number = 1): unknown[] => arr.flat(depth)
+export const flatten = <T>(arr: T[], depth: number = 1): T[] =>
+	arr.flat(depth) as T[];

@@ -1,1 +1,1 @@
-export const pop = <T>(arr: T[]) => arr.pop()
+export const pop = <T>(arr: T[]) => arr.pop();

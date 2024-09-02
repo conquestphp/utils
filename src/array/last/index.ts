@@ -1,1 +1,1 @@
-export const last = <T>(arr: T[]) => arr.at(-1)
+export const last = <T>(arr: T[]) => arr.at(-1);

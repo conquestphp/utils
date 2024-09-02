@@ -1,1 +1,1 @@
-export const prev = <T>(arr: T[], i: number) => arr[i - 1]
+export const prev = <T>(arr: T[], i: number) => arr[i - 1];

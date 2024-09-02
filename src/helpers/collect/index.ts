@@ -1,215 +1,247 @@
-import * as a from "../../array"
-import * as n from "../../number"
+import * as a from "../../array";
+import { max, maxBy, mean, median, min, minBy, mode, sum } from "../../number";
+import * as o from "../../object";
 
-export type Items<T = any> = T[] | Record<string, T>
+export type Obj<T> = Record<string, T>;
+export type Items<T> = T[] | Obj<T>;
 
-export const collect = <T>(items?: Items<T>): Collection<T> => 
-    new Collection<T>(items)
+export const collect = <T>(items?: Items<T>): Collection<T> =>
+	new Collection<T>(items);
 
-export class Collection<T = any> {
-    private items: Items<T>
-    private associative: boolean
+export class Collection<T> {
+	private items: Items<T>;
+	private isArray: boolean;
 
-    constructor(items?: Items<T>) {
-        this.items = items || []
-        this.associative = typeof items === 'object'
-    }
+	constructor(items?: Items<T>) {
+		this.items = items || [];
+		this.isArray = Array.isArray(items);
+	}
 
-    private chain(
-		fn: (s: Items<T>, ...args: any[]) => Items<T>,
+	private chain<U, V>(
+		v: U,
+		fn: (s: U, ...args: any[]) => V,
 		...args: any[]
 	): Collection<T> {
-		this.items = fn(this.items, ...args);
+		this.items = fn(v, ...args) as unknown as Items<T>;
 		return this;
 	}
 
-    /** Chain
-     * 
-     * flip
-     * forget
-     * groupBy
-     * intersect
-     * keyBy
-     * map
-     * mapWithKeys
-     * merge
-     * multiply (copy)
-     * nth
-     * only
-     * pipe
-     * pluck
-     * prepend
-     * push
-     * put
-     * range
-     * reduce
-     * reject
-     * replace
-     * reverse
-     * select
-     * shuffle
-     * skip
-     * slice
-     * sort
-     * sortBy
-     * sortByDesc
-     * sortDesc
-     * sortKeys
-     * sortKeysDesc
-     * sortKeysUsing
-     * split
-     * splice
-     * take
-     * unique
-     * unless
-     * when
-     * where
-     * whereBetween
-     * whereIn
-     * zip
-     */
+	/** Chain
+	 *
+	 * flip
+	 * forget
+	 * groupBy
+	 * intersect
+	 * keyBy
+	 * map
+	 * mapWithKeys
+	 * merge
+	 * multiply (copy)
+	 * nth
+	 * only
+	 * pipe
+	 * pluck
+	 * prepend
+	 * push
+	 * put
+	 * range
+	 * reduce
+	 * reject
+	 * replace
+	 * reverse
+	 * select
+	 * shuffle
+	 * skip
+	 * slice
+	 * sort
+	 * sortBy
+	 * sortByDesc
+	 * sortDesc
+	 * sortKeys
+	 * sortKeysDesc
+	 * sortKeysUsing
+	 * split
+	 * splice
+	 * take
+	 * unique
+	 * unless
+	 * when
+	 * where
+	 * whereBetween
+	 * whereIn
+	 * zip
+	 */
 
-    /** T methods
-     * 
-     * after
-     * all
-     * at
-     * all
-     * contains
-     * keys
-     * first
-     * get
-     * last
-     * pop
-     * pull
-     * random
-     * search
-     * shift
-     * sole
+	flip() {
+		return this.isArray ? this : this.chain(this.items as Obj<T>, o.flip);
+	}
 
-     * value
-     * values
-     */
-    
-    /** Numerical methods 
-     * 
-     * average
-     * max
-     * maxBy
-     * median
-     * mode
-     * min
-     * minBy
-     * percentage
-     * sum
-    */
-    
+	forget(...keys: (keyof T)[]) {
+		return this.isArray
+			? this
+			: this.chain(this.items as Obj<T>, o.forget, ...keys);
+	}
 
-    // Typed methods
+	groupBy<K extends keyof T>(key: K) {
+		return this.isArray ? this.chain(this.items as T[], a.groupBy, key) : this;
+	}
 
-    //after
-    //all
-    //at
-    //get
-    
-    // String methods
+	intersect(items: T[]) {
+		return this.isArray
+			? this.chain(this.items as T[], a.intersect, items)
+			: this;
+	}
 
-    // implode
-    // join
+	// keyBy<K extends keyof T>(key: K) {
+	//     return this.isArray ? this.chain(this.items as T[], a.keyBy, key) : this;
+	// }
 
-    // Booleans
+	map(callback: (item: T, index: number) => T) {
+		return this.isArray ? this.chain(this.items as T[], a.map, callback) : this;
+	}
 
-    // has
-    // hasAny 
-    // isEmpty
-    // isNotEmpty
+	/** T methods
+	 *
+	 * after
+	 * all
+	 * at
+	 * contains
+	 * keys
+	 * first
+	 * get
+	 * last
+	 * pop
+	 * pull
+	 * random
+	 * search
+	 * shift
+	 * sole
+	 * value
+	 * values
+	 */
 
-    // after(index: number): T|undefined {
-    //     return this.associative ? undefined : a.next(this.items as T[], index)
-    // }
+	all(): Items<T> {
+		return this.items;
+	}
 
-    all(): Items<T> {
-        return this.items
-    }
+	at(index: number): T | undefined {
+		return this.isArray ? a.at(this.items as T[], index) : undefined;
+	}
 
-    at(index: number): T|undefined {
-        return this.associative ? undefined : a.at(this.items as T[], index)
-    }
+	// contains(value: T): boolean {
+	//     return this.isArray ? a.contains(this.items as T[], value) : a.contains(Object.values(this.items), value)
+	// }
 
-    average(): number|undefined {
-        return this.associative ? undefined : n.mean(this.items as number[])
-    }
+	keys(): string[] {
+		return this.isArray ? [] : o.keys(this.items);
+	}
 
-    // before(index: number): T|undefined {
-    //     return this.associative ? undefined : a.prev(this.items as T[], index)
-    // }
+	// first(): T|undefined {
+	//     return this.isArray ? a.first(this.items) : o.first(this.items)
+	// }
 
-    chunk(size: number): T[][]|undefined {
-        return this.associative ? undefined : a.chunk(this.items as T[], size)
-    }
+	/** Numerical methods
+	 *
+	 * average
+	 * max
+	 * maxBy
+	 * median
+	 * mode
+	 * min
+	 * minBy
+	 * percentage
+	 * sum
+	 */
 
-    // collapse(): T[]|undefined {
-    //     return this.associative ? undefined : a.collapse(this.items as T[])
-    // }
+	// Typed methods
 
-    // combine
+	//after
+	//all
+	//at
+	//get
 
-    // concat(): T[]|undefined {
-    //     return this.associative ? undefined : a.concat(this.items as T[])
-    // }
+	// String methods
 
-    // contains(value: T): boolean {
-    //     return this.associative ? this.items[value] : a.contains(this.items as T[], value)
-    // }
+	// implode
+	// join
 
-    count(): number {
-        return a.count((this.associative ? Object.keys(this.items) : this.items) as T[])
-    }
+	// Booleans
 
-    // duplicates(): T[]|undefined {
-    //     return this.associative ? undefined : a.duplicates(this.items as T[])
-    // }
+	// has
+	// hasAny
+	// isEmpty
+	// isNotEmpty
 
-    each(callback: (item: T, index: number) => void): void {
-        return a.each(this.associative ? Object.values(this.items) : this.items as T[], callback)
-    }
+	// after(index: number): T|undefined {
+	//     return this.isArray ? undefined : a.next(this.items as T[], index)
+	// }
 
-    every(callback: (item: T, index: number) => boolean): boolean {
-        return a.every(this.associative ? Object.values(this.items) : this.items as T[], callback)
-    }
+	average(): number | undefined {
+		return this.isArray ? undefined : mean(this.items as number[]);
+	}
 
-    // except(values: T[]): T[] {
+	// before(index: number): T|undefined {
+	//     return this.isArray ? undefined : a.prev(this.items as T[], index)
+	// }
 
-    // filter(callback: (item: T, index: number) => boolean): T[] {
-    //     return a.filter(this.associative ? Object.values(this.items) : this.items as T[], callback)
-    // }
+	chunk(size: number): T[][] | undefined {
+		return this.isArray ? undefined : a.chunk(this.items as T[], size);
+	}
 
-    // first(fn?: (item: T, index: number) => boolean): T|undefined {
-    //     return this.associative ? undefined : a.first(this.items as T[], fn)
-    // }
+	// collapse(): T[]|undefined {
+	//     return this.isArray ? undefined : a.collapse(this.items as T[])
+	// }
 
+	// combine
 
+	// concat(): T[]|undefined {
+	//     return this.isArray ? undefined : a.concat(this.items as T[])
+	// }
 
+	// contains(value: T): boolean {
+	//     return this.isArray ? this.items[value] : a.contains(this.items as T[], value)
+	// }
 
+	count(): number {
+		return a.count(
+			(this.isArray ? Object.keys(this.items) : this.items) as T[],
+		);
+	}
 
+	// duplicates(): T[]|undefined {
+	//     return this.isArray ? undefined : a.duplicates(this.items as T[])
+	// }
 
+	each(callback: (item: T, index: number) => void): void {
+		return a.each(
+			this.isArray ? Object.values(this.items) : (this.items as T[]),
+			callback,
+		);
+	}
 
+	every(callback: (item: T, index: number) => boolean): boolean {
+		return a.every(
+			this.isArray ? Object.values(this.items) : (this.items as T[]),
+			callback,
+		);
+	}
 
+	// except(values: T[]): T[] {
 
+	// filter(callback: (item: T, index: number) => boolean): T[] {
+	//     return a.filter(this.isArray ? Object.values(this.items) : this.items as T[], callback)
+	// }
 
+	// first(fn?: (item: T, index: number) => boolean): T|undefined {
+	//     return this.isArray ? undefined : a.first(this.items as T[], fn)
+	// }
 
-
-
-
-
-
-
-    toJSON(): Items<T> {
-        return this.items
-    }
+	toJSON(): Items<T> {
+		return this.items;
+	}
 }
 
-Object.defineProperty(Collection.prototype, 'toJSON', {
-    enumerable: false,
-    value: Collection.prototype.toJSON
-})
+Object.defineProperty(Collection.prototype, "toJSON", {
+	enumerable: false,
+	value: Collection.prototype.toJSON,
+});

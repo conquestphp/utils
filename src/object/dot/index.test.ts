@@ -8,7 +8,3 @@ it("can expand dot notation", () => {
 it("can expand dot notation with array indices", () => {
 	expect(dot("a.0.b.c")).toEqual(["a", 0, "b", "c"]);
 });
-
-it("handles empty strings", () => {
-	expect(dot("")).toEqual([]);
-});

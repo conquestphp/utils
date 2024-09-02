@@ -25,13 +25,13 @@ export { percentage } from "./percentage";
 export { pluck } from "./pluck";
 export { pop } from "./pop";
 export { prev } from "./prev";
-export { push } from "./push"
+export { push } from "./push";
 export { random } from "./random";
 export { range } from "./range";
 export { reduce } from "./reduce";
 export { reject } from "./reject";
 export { reverse } from "./reverse";
-export { search } from "./search";
+// export { search } from "./search";
 export { shift } from "./shift";
 export { shuffle } from "./shuffle";
 export { slice } from "./slice";

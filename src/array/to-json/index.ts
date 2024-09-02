@@ -1,1 +1,1 @@
-export const toJson = <T>(arr: T[]) => JSON.stringify(arr)
+export const toJson = <T>(arr: T[]) => JSON.stringify(arr);

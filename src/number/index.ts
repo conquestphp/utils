@@ -8,6 +8,6 @@ export { mean } from "./mean";
 export { median } from "./median";
 export { min } from "./min";
 export { minBy } from "./min-by";
-export { mode } from './mode';
+export { mode } from "./mode";
 export { ordinal } from "./ordinal";
 export { sum } from "./sum";

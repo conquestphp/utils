@@ -1,1 +1,1 @@
-export const shift = <T>(arr: T[]) => arr.shift()
+export const shift = <T>(arr: T[]) => arr.shift();
